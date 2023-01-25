@@ -97,6 +97,6 @@ Route::get('/search','TransfersController@search');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('login', [UserController::class, 'login'])->name('login'); 
+Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('postsignup', [UserController::class, 'signupsave'])->name('postsignup');
 Route::get('signout', [UserController::class, 'signOut'])->name('signout');
