@@ -49,17 +49,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- ===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="/css/style3.css">
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="./assets/css/style3.css">
-         
+
     <title>تسجيل الدخول</title>
+<!--- icon ---->
+    <link rel="stylesheet" href="{{ URL::asset('img/AdminLTELogo.png') }}">
 </head>
 <body>
-    
+
     <div class="container">
         <div class="forms">
             <div class="form login">
@@ -123,11 +125,11 @@
                         <a href="#" class="text login-link">تسجيل الدخول الأن</a>
                     </span>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>--}}
 
     <script src="./assets/js/script2.js"></script>
 
 </body>
-</html> 
+</html>

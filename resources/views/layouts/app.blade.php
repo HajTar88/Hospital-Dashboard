@@ -15,6 +15,8 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+<!--- icon ---->
+    <link rel="stylesheet" href="{{ URL::asset('img/AdminLTELogo.png') }}">
 </head>
 <body>
     <div id="app">

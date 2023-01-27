@@ -18,6 +18,8 @@
     <!-- Bootstrap 4 RTL -->
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--- icon ---->
+    <link rel="stylesheet" href="{{ URL::asset('img/AdminLTELogo.png') }}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -29,11 +31,11 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      
+
     </ul>
 
     <!-- SEARCH FORM -->
-   
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto-navbav">
@@ -96,7 +98,7 @@
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-     
+
     </ul>
   </nav>
 
@@ -114,7 +116,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2" >
@@ -191,7 +193,7 @@
                 <i class="bi bi-file-earmark-medical"></i>
               <p>
               تقارير الأطبــــــاء
-              
+
              </p>
               </a>
             </ul>
@@ -200,7 +202,7 @@
                 <i class="bi bi-file-earmark-medical"></i>
               <p>
               تقارير المرضى
-              
+
              </p>
               </a>
             </ul>
@@ -209,7 +211,7 @@
                 <i class="bi bi-file-earmark-medical"></i>
               <p>
               تقارير التحاويل
-              
+
              </p>
               </a>
             </ul>
@@ -241,7 +243,7 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-         
+
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -264,7 +266,7 @@
                 <i class="bi bi-activity"></i>
               </div>
               </div>
-       
+
           </div>
           <div class="col-lg-4 col-6">
             <!-- small box -->
@@ -278,7 +280,7 @@
                 <i class="bi bi-people"></i>
               </div>
               </div>
-       
+
           </div>
           <div class="col-lg-4 col-6">
             <!-- small box -->
@@ -292,7 +294,7 @@
                 <i class='fas fa-user-md'></i>
               </div>
               </div>
-       
+
           </div>
           <div class="col-lg-4 col-6">
             <!-- small box -->
@@ -306,7 +308,7 @@
                 <i class='fas fa-bed' ></i>
               </div>
               </div>
-       
+
           </div>
           <div class="col-lg-4 col-6">
             <!-- small box -->
@@ -333,7 +335,7 @@
                 <i class='fas fa-plus-circle'></i>
               </div>
               </div>
-       
+
           </div>
           <div class="col-lg-4 col-6">
             <!-- small box -->
@@ -347,14 +349,14 @@
                 <i class='fas fa-heartbeat'></i>
               </div>
               </div>
-       
+
           </div>
 
           </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
- 
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

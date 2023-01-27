@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<!--- icon ---->
+    <link rel="stylesheet" href="{{ URL::asset('img/AdminLTELogo.png') }}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -30,11 +32,11 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      
+
     </ul>
 
     <!-- SEARCH FORM -->
-   
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto-navbav">
@@ -97,7 +99,7 @@
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-     
+
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -113,9 +115,9 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      
 
-  
+
+
       <!-- Sidebar Menu -->
  <nav class="mt-2" >
   <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -129,8 +131,8 @@
        </p>
       </a>
      </li>
-   
-   
+
+
      <li class="nav-item">
        <a href="{{route('doctors.index')}}" class="nav-link ">
          <i class='fas fa-user-md'></i>
@@ -184,7 +186,7 @@
             <i class="bi bi-file-earmark-medical"></i>
           <p>
           التقارير
-          
+
          </p>
           </a>
           <ul class="nav nav-treeview">
@@ -192,7 +194,7 @@
             <i class="bi bi-file-earmark-medical"></i>
           <p>
           تقارير الأطبــــــاء
-          
+
          </p>
           </a>
         </ul>
@@ -201,7 +203,7 @@
             <i class="bi bi-file-earmark-medical"></i>
           <p>
           تقارير المرضى
-          
+
          </p>
           </a>
         </ul>
@@ -210,7 +212,7 @@
             <i class="bi bi-file-earmark-medical"></i>
           <p>
           تقارير التحاويل
-          
+
          </p>
           </a>
         </ul>
@@ -221,7 +223,7 @@
            <p>التحاويل</p>
          </a>
        </ul>
-  
+
    <li class="nav-item">
      <a href="{{ route ('signout') }}" class="nav-link ">
        <i class="bi bi-box-arrow-right"></i>
@@ -244,10 +246,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            
+
           </div><!-- /.col -->
           <div class="col-sm-6">
-           
+
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -258,7 +260,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-      
+
         <!-- /.row -->
         <!-- Main row -->
         <div class="row">
@@ -282,14 +284,14 @@
               <div class="card-body">
                 <div class="tab-content p-0">
                   <!-- Morris chart - Sales -->
-                 
 
-                          
+
+
                     </div>
                     <table class="table table-bordered">
                         <thead class="text-center">
                           <tr>
-                            
+
                             <th scope="col">رقم المريض</th>
                             <th scope="col">اسم المريض </th>
                             <th scope="col"> العنوان</th>
@@ -299,7 +301,7 @@
                             <th scope="col"> إلى</th>
                             <th scope="col"> الحالة</th>
 
-                           
+
                             <th scope="col">العمليـــــات</th>
                           </tr>
                         </thead>
@@ -309,7 +311,7 @@
                          @endphp
                           @foreach ($transfers as $item)
                           <tr>
-                            
+
                             <td>{{$item->patient_code}}</td>
                             <td>{{$item->patient_name}}</td>
                             <td>{{$item->address}}</td>
@@ -325,19 +327,19 @@
                             </td>
                           </tr>
                           @endforeach
-    
-                            
+
+
                           </div>
                         </tbody>
-                  </table> 
+                  </table>
                 </div>
               </div><!-- /.card-body -->
             </div>
             <!-- /.card -->
-          
+
             <!-- DIRECT CHAT -->
             <div class="card direct-chat direct-chat-primary">
-              
+
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="direct-chat-contacts">
@@ -417,7 +419,7 @@
                       </a>
                     </li>
                     <!-- End Contact Item -->
-                  
+
                     <!-- End Contact Item -->
                   </ul>
                   <!-- /.contacts-list -->
@@ -425,16 +427,16 @@
                 <!-- /.direct-chat-pane -->
               </div>
               <!-- /.card-body -->
-            
+
               <!-- /.card-footer-->
             </div>
             <!--/.direct-chat -->
 
             <!-- TO DO List -->
-          
+
             <!-- /.card -->
           </section>
-       
+
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
@@ -442,7 +444,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
- 
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

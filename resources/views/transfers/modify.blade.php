@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<!--- icon ---->
+    <link rel="stylesheet" href="{{ URL::asset('img/AdminLTELogo.png') }}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -30,11 +32,11 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      
+
     </ul>
 
     <!-- SEARCH FORM -->
-   
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto-navbav">
@@ -97,7 +99,7 @@
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-     
+
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -128,8 +130,8 @@
                  </p>
                 </a>
                </li>
-             
-             
+
+
                <li class="nav-item">
                  <a href="{{route('doctors.index')}}" class="nav-link ">
                    <i class='fas fa-user-md'></i>
@@ -183,7 +185,7 @@
                       <i class="bi bi-file-earmark-medical"></i>
                     <p>
                     التقارير
-                    
+
                    </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -191,7 +193,7 @@
                       <i class="bi bi-file-earmark-medical"></i>
                     <p>
                     تقارير الأطبــــــاء
-                    
+
                    </p>
                     </a>
                   </ul>
@@ -200,7 +202,7 @@
                       <i class="bi bi-file-earmark-medical"></i>
                     <p>
                     تقارير المرضى
-                    
+
                    </p>
                     </a>
                   </ul>
@@ -209,7 +211,7 @@
                       <i class="bi bi-file-earmark-medical"></i>
                     <p>
                     تقارير التحاويل
-                    
+
                    </p>
                     </a>
                   </ul>
@@ -219,7 +221,7 @@
                      <p>التحاويل</p>
                    </a>
                  </ul>
-            
+
              <li class="nav-item">
                <a href="./login.html" class="nav-link ">
                  <i class="bi bi-box-arrow-right"></i>
@@ -278,7 +280,7 @@
                                         <form action="{{route('transfers.update', $transfer->id)}}" method="POST">
                                             @csrf
                                             @method('PUT')
-                                           
+
                                             </div>
                                             <div class="row">
                                                 <div class="col">
@@ -290,7 +292,7 @@
                                                 <input type="text" class="form-control" id="hospitalName"
                                                    name="patient_name" value="{{$transfer->patient_name}}" placeholder="اسم المريض">
                                             </div>
-                                           
+
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-sm-6">
@@ -327,7 +329,7 @@
                                                         value="مستشفى رويال كير" >مستشفى  رويال كير</option>
                                                     </select>
                                                 </div>
-                                               
+
                                                     <div class="form-group col-sm-6" >
                                                         <label for="hospitalName"> المستشفى المحول اليها</label>
                                                         <select id="hospitalName" name="hospital_referred" value="{{$transfer->hospital_referred}}">
@@ -338,11 +340,11 @@
                                                             <option
                                                             value="مستشفى رويال كير" >مستشفى  رويال كير</option>
                                                         </select>
-                                                    </div> 
-                                               
-                                                  
+                                                    </div>
+
+
                                             </div><br>
-                                       
+
                                             <div class="form-check">
                                                 <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
@@ -477,7 +479,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-       
+
         </footer>
 
         <!-- Control Sidebar -->

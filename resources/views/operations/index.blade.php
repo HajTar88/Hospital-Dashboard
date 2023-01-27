@@ -46,6 +46,8 @@
 
     }
   </style>
+<!--- icon ---->
+    <link rel="stylesheet" href="{{ URL::asset('img/AdminLTELogo.png') }}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -57,11 +59,11 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      
+
     </ul>
 
     <!-- SEARCH FORM -->
-   
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto-navbav">
@@ -124,7 +126,7 @@
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-     
+
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -141,9 +143,9 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      
 
-       
+
+
       <!-- Sidebar Menu -->
       <nav class="mt-2" >
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -157,8 +159,8 @@
              </p>
             </a>
            </li>
-       
-         
+
+
            <li class="nav-item">
              <a href="{{route('doctors.index')}}" class="nav-link ">
                <i class='fas fa-user-md'></i>
@@ -212,7 +214,7 @@
                   <i class="bi bi-file-earmark-medical"></i>
                 <p>
                 التقارير
-                
+
                </p>
                 </a>
                 <ul class="nav nav-treeview">
@@ -220,7 +222,7 @@
                   <i class="bi bi-file-earmark-medical"></i>
                 <p>
                 تقارير الأطبــــــاء
-                
+
                </p>
                 </a>
               </ul>
@@ -229,7 +231,7 @@
                   <i class="bi bi-file-earmark-medical"></i>
                 <p>
                 تقارير المرضى
-                
+
                </p>
                 </a>
               </ul>
@@ -238,7 +240,7 @@
                   <i class="bi bi-file-earmark-medical"></i>
                 <p>
                 تقارير التحاويل
-                
+
                </p>
                 </a>
               </ul>
@@ -249,7 +251,7 @@
                  <p>التحاويل</p>
                </a>
              </ul>
-        
+
          <li class="nav-item">
            <a href="./login.html" class="nav-link ">
              <i class="bi bi-box-arrow-right"></i>
@@ -272,10 +274,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            
+
           </div><!-- /.col -->
           <div class="col-sm-6">
-           
+
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -286,7 +288,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-      
+
         <!-- /.row -->
         <!-- Main row -->
         <div class="row">
@@ -299,7 +301,7 @@
                   <i class="fas fa-plus"></i>
                   <a href="{{route('operations.create')}}"><button class="btn btn-success">اضـــــافة غرفة عمليات</button></a>
                 </h3>
-                
+
               </div><!-- /.card-header -->
               <div class="container">
                 @if ($message = Session::get('success'))
@@ -310,18 +312,18 @@
               <div class="card-body">
                 <div class="tab-content p-0">
                   <!-- Morris chart - Sales -->
-                 
 
-                          
+
+
                     </div>
                     <table class="table table-bordered">
                         <thead class="text-center">
                           <tr>
-                            
+
                             <th scope="col">رقم غرفة العمليـــــات</th>
                             <th scope="col">العنوان </th>
                             <th scope="col">عدد الأسرة</th>
-                           
+
                             <th scope="col">العمليـــــات</th>
                           </tr>
                         </thead>
@@ -331,7 +333,7 @@
                          @endphp
                           @foreach ($operations as $item)
                           <tr>
-                            
+
                             <td>{{$item->operation_code	}}</td>
                             <td>{{$item->address}}</td>
                             <td>{{$item->beds}}</td>
@@ -342,11 +344,11 @@
                             </td>
                           </tr>
                           @endforeach
-    
-                            
+
+
                           </div>
                     </tbody>
-                  </table> 
+                  </table>
                 </div>
               </div><!-- /.card-body -->
             </div>
@@ -354,7 +356,7 @@
 
             <!-- DIRECT CHAT -->
             <div class="card direct-chat direct-chat-primary">
-              
+
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="direct-chat-contacts">
@@ -434,7 +436,7 @@
                       </a>
                     </li>
                     <!-- End Contact Item -->
-                  
+
                     <!-- End Contact Item -->
                   </ul>
                   <!-- /.contacts-list -->
@@ -442,16 +444,16 @@
                 <!-- /.direct-chat-pane -->
               </div>
               <!-- /.card-body -->
-            
+
               <!-- /.card-footer-->
             </div>
             <!--/.direct-chat -->
 
             <!-- TO DO List -->
-          
+
             <!-- /.card -->
           </section>
-       
+
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
@@ -459,7 +461,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
