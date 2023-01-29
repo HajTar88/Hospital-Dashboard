@@ -11,6 +11,8 @@ class Hospital extends Authenticatable
 {
 use Notifiable;
 use HasFactory;
+// protected $table = 'hospitals';
+protected $primaryKey = 'id';
 protected $guard = "hospitals";
 protected $table = 'hospitals';
 protected $fillable = ['hospital_code','hospital_name','hospital_address','phone','password'];
@@ -29,4 +31,16 @@ public function getAuthPassword()
   return $this->password;
 }
 // protected $table = 'hospital'; // add this line with your table name
+// namespace App\Models;
+
+// use Illuminate\Database\Eloquent\Factories\HasFactory;
+// use Illuminate\Database\Eloquent\Model;
+
+// class Hospital extends Model
+// {
+//     use HasFactory;
+
+//     protected $table = 'hospitals';
+//     protected $fillable = ['hospital_name', 'password'];
+// }
 }

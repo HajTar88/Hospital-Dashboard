@@ -63,7 +63,8 @@ class DoctorController extends Controller
             'specialization'=>$request->specialization,
             'address'=>$request->address,
             'phone'=>$request->phone,
-            'hospital_id'=>Auth::id()
+            'hospital_id'=>Auth::id(),
+            'password'=>$request->password
         ]);
         return redirect()->route('doctors.index')->with('success','doctors add Successfully');
     }

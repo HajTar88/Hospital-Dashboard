@@ -159,9 +159,9 @@ class TransfersController extends Controller
 
     public function search()
     {
-      $search_text =$_GET['search'];
+      $search_text =$_GET['query'];
       $transfers = Transfers::where('patient_code','LIKE','%'.$search_text.'%')->get();
-      return view('transfers.search',compact('transfer'));
+      return view('transfers.search',compact('transfers'));
 
     }
     public function acc(Request $request , $id )

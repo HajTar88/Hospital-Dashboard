@@ -317,6 +317,22 @@
                                                     <span class="text-red">    @error('phone')    {{$message}} @enderror </span>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                              <div class="col">
+                                                <label for="password"> كلمة المرور</label>
+                                                <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="كلمة المرور"  >
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            </div>
+                                            <div class="col">
+                                                <label for="password"> تاكيد كلمة المرور</label>
+                                                <input id="password" type="password" name="password_confirmation" class="form-control  @error('password') is-invalid @enderror " placeholder="تاكيد كلمة المرور" >
+                                            </div>
+                                            </div>
+                                            
 
 
                                             <div class="form-check">

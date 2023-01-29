@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('doctor_name');
             $table->string('weekly_schedule');
             $table->string('email');
+            $table->string('password');
             $table->string('specialization');
             $table->string('address');
             $table->string('phone');

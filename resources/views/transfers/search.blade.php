@@ -1,3 +1,4 @@
+@extends('master')
 @extends('layouts.master')
 
 

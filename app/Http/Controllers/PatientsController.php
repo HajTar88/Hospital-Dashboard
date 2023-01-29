@@ -134,7 +134,7 @@ class PatientsController extends Controller
 
     public function search()
     {
-      $search_text =$_GET['search'];
+      $search_text =$_GET['query'];
       $patients = Patients::where('patient_code','LIKE','%'.$search_text.'%')->get();
       return view('patients.search',compact('patient'));
 

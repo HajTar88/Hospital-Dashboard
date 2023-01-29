@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HospitalAuthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +97,7 @@ Route::get('/search','TransfersController@search');
 
 
 Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('login', [UserController::class, 'login'])->name('login');

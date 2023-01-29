@@ -87,7 +87,7 @@ return [
     */
 
     'passwords' => [
-        'hospitals' => [
+        'users' => [
             'provider' => 'hospitals',
             'table' => 'password_resets',
             'expire' => 60,
@@ -108,9 +108,4 @@ return [
 
     'password_timeout' => 10800,
 
-    'hospitals' => [
-        'redirectTo' => 'info',
-        'driver' => 'session',
-        'provider' => 'hospitals',
-    ],
 ];
