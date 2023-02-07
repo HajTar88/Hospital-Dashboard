@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('operation_code');
             $table->string('address');
-            $table->integer('hospital_id')->unsigned();
+            $table->bigInteger('hospital_id')->unsigned();
             $table->string('beds');
             $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
 
