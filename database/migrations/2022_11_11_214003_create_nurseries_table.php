@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nurserie_code');
             $table->string('address');
             $table->string('beds');
-            $table->integer('hospital_id')->unsigned();
+            $table->bigInteger('hospital_id')->unsigned();
             $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
             $table->timestamps();
         });

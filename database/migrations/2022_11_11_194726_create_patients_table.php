@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('case');
             $table->string('diagnosis');
             $table->string('password');
-            $table->integer('hospital_id')->unsigned();
+            $table->bigInteger('hospital_id')->unsigned();
             $table->timestamps();
             $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
         });
