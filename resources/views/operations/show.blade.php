@@ -185,8 +185,8 @@
                     <i class="bi bi-file-earmark-medical"></i>
                   <p>
                   التقارير
-
                  </p>
+                 <i class="right fas fa-angle-left"></i>
                   </a>
                   <ul class="nav nav-treeview">
                     <a href="{{url('doctorsr')}}" class="nav-link">
@@ -224,7 +224,7 @@
                 </ul>
 
              <li class="nav-item">
-               <a href="./login.html" class="nav-link ">
+               <a href="{{route('signout')}}" class="nav-link ">
                  <i class="bi bi-box-arrow-right"></i>
                  <p>
                    تسجيـــــل خروج
@@ -283,15 +283,18 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <label for="hospitalName">رقم غرفة العمليـــــات</label>
-                                                    <input type="text" class="form-control" name="operation_code" value="{{$operation->operation_code}}" placeholder="رقم غرفة العمليـــــات">
+                                                    {{-- <input type="text" class="form-control" name="operation_code" value="{{$operation->operation_code}}" placeholder="رقم غرفة العمليـــــات"> --}}
+                                                    <p>{{$operation->operation_code}}</p>
                                                 </div>
                                                 <div class="col">
                                                     <label for="hospitalName"> عنوان غرفة العمليات</label>
-                                                    <input type="text" class="form-control" name="address" value="{{$operation->address}}" placeholder="عنوان غرفة العمليات ">
+                                                    {{-- <input type="text" class="form-control" name="address" value="{{$operation->address}}" placeholder="عنوان غرفة العمليات "> --}}
+                                                    <p>{{$operation->address}}</p>
                                                 </div>
                                                 <div class="col">
                                                     <label for="hospitalName">  عدد الأسرة</label>
-                                                    <input type="text" class="form-control" name="beds" value="{{$operation->beds}}" placeholder=" عدد الأسرة">
+                                                    {{-- <input type="text" class="form-control" name="beds" value="{{$operation->beds}}" placeholder=" عدد الأسرة"> --}}
+                                                    <p>{{$operation->beds}}</p>
                                                 </div>
                                             </div>
 
@@ -303,8 +306,8 @@
                                             <div class="row">
 
                                                 <div class="col">
-                                                    <a href="{{route('operations.index')}}" class="btn btn-danger">الغاء <i
-                                                            class="bi bi-x-lg"></i></a>
+                                                    <a href="{{route('operations.index')}}" class="btn btn-danger">رجوع <i
+                                                            class=""></i></a>
                                                 </div>
                                             </div>
 

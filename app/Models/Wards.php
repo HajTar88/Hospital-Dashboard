@@ -9,3 +9,4 @@ class Wards extends Model
 {
     protected $fillable = ['ward_code','address','beds','hospital_id'];
 }
+?>

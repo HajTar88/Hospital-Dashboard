@@ -25,3 +25,4 @@ class DashBoardController extends Controller
         return view('info', compact('doctors' , 'patients', 'wards' , 'rooms' , 'transfers' , 'cares' , 'operations'));
     }
 }
+?>

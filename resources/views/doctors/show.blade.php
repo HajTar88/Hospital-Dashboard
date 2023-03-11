@@ -185,8 +185,8 @@
                   <i class="bi bi-file-earmark-medical"></i>
                 <p>
                 التقارير
-
                </p>
+               <i class="right fas fa-angle-left"></i>
                 </a>
                 <ul class="nav nav-treeview">
                   <a href="{{url('doctorsr')}}" class="nav-link">
@@ -224,7 +224,7 @@
              </ul>
 
          <li class="nav-item">
-           <a href="./login.html" class="nav-link ">
+           <a href="{{route('signout')}}" class="nav-link ">
              <i class="bi bi-box-arrow-right"></i>
              <p>
                تسجيـــــل خروج
@@ -278,37 +278,51 @@
                                 <div class="card-body">
                                     <div class="tab-content p-0">
                                         <!-- Morris chart - Sales -->
+                                        <div class="row">
+                                          <div class="form-group col">
+                                            <label for="hospitalName">اسم الطبيب </label>
+                                            {{-- <input type="text" class="form-control" id="hospitalName"
+                                            name="doctor_name" value="{{$doctor->doctor_name}}" placeholder="اسم الطبيب "> --}}
+                                            <p>{{$doctor->doctor_name}}</p>
+                                </div><br>
+                                <div class="form-group col">
+                                  <label for="hospitalName"> الجدول الإسبوعي </label>
+                                  {{-- <input type="text" class="form-control" id="hospitalName"
+                                  name="weekly_schedule" value="{{$doctor->weekly_schedule}}" placeholder="الجدول الإسبوعي"> --}}
+                                  <p>{{$doctor->weekly_schedule}}</p>
+                      </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="form-group col">
+                                            <label for="hospitalName">البريد الالكتروني </label>
+                                            {{-- <input type="text" class="form-control" id="hospitalName"
+                                            name="email" value="{{$doctor->email}}" placeholder="example@gmail.com  "> --}}
+                                            <p>{{$doctor->email}}</p>
+                                </div><br>
+                                <div class="form-group col">
+                                    <label for="hospitalCode">التخصص</label>
+                                    {{-- <input type="text" class="form-control" id="hospitalCode"
+                                     name="specialization" value="{{$doctor->specialization}}" placeholder="ادخل تخصص الطبيب"> --}}
+                                     <p>{{$doctor->specialization}}</p>
 
-                                                    <div class="form-group col-sm-15">
-                                                      <label for="hospitalName">اسم الطبيب </label>
-                                                      <input type="text" class="form-control" id="hospitalName"
-                                                      name="doctor_name" value="{{$doctor->doctor_name}}" placeholder="اسم الطبيب ">
-                                          </div>
-                                          <div class="form-group col-sm-15">
-                                            <label for="hospitalName"> الجدول الإسبوعي </label>
-                                            <input type="text" class="form-control" id="hospitalName"
-                                            name="weekly_schedule" value="{{$doctor->weekly_schedule}}" placeholder="الجدول الإسبوعي">
-                                </div>
-                                                    <div class="form-group col-sm-15">
-                                                        <label for="hospitalName">البريد الالكتروني </label>
-                                                        <input type="text" class="form-control" id="hospitalName"
-                                                        name="email" value="{{$doctor->email}}" placeholder="example@gmail.com  ">
-                                            </div>
-                                            <div class="form-group col-sm-15">
-                                                <label for="hospitalCode">التخصص</label>
-                                                <input type="text" class="form-control" id="hospitalCode"
-                                                 name="specialization" value="{{$doctor->specialization}}" placeholder="ادخل تخصص الطبيب">
-
-                                            </div>
+                                </div></div>     
                                             <div class="row">
                                                 <div class="col">
                                                     <label for="hospitalName">العنوان </label>
-                                                    <input type="text" class="form-control" name="address" value="{{$doctor->address}}" placeholder="العنوان ">
+                                                    {{-- <input type="text" class="form-control" name="address" value="{{$doctor->address}}" placeholder="العنوان "> --}}
+                                                    <p>{{$doctor->address}}</p>
                                                 </div>
                                                 <div class="col">
                                                     <label for="hospitalName"> الهاتف</label>
-                                                    <input type="text" class="form-control" name="phone" value="{{$doctor->phone}}" placeholder="992602356 249+ ">
+                                                    {{-- <input type="text" class="form-control" name="phone" value="{{$doctor->phone}}" placeholder="992602356 249+ "> --}}
+                                                    <p>{{$doctor->phone}}</p>
                                                 </div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col">
+                                                <label for="hospitalName">بروفايل الطبيب</label><br>
+                                               <img src="{{$doctor->photo}}" alt="" srcset="" width="80">
+                                            </div>
                                             </div>
 
 
@@ -319,7 +333,7 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <a href="{{route('doctors.index')}}" class="btn btn-danger">رجوع <i
-                                                            class="bi bi-x-lg"></i></a>
+                                                            class=""></i></a>
                                                 </div>
                                             </div>
                                     </div>

@@ -53,7 +53,8 @@ class RoomsController extends Controller
             'room_size' =>$request->room_size,
             'hospital_id'=>Auth::id()
         ]);
-        return redirect()->route('rooms.index')->with('success','rooms add Successfully');
+        return redirect()->route('rooms.index')->with('success','تمت الاضافة بنجاح');
+
     }
 
     /**
@@ -91,7 +92,8 @@ class RoomsController extends Controller
     {
         $room = Rooms::find($id);
         $room->update($request->all());
-        return redirect()->route('rooms.index')->with('success','rooms update Successfully');
+        return redirect()->route('rooms.index')->with('succe','تم التعديل بنجاح');
+
     }
 
     /**
@@ -108,7 +110,8 @@ class RoomsController extends Controller
     {
         $room = Rooms::find($id);
         $room->delete();
-        return redirect()->route('rooms.index')->with('success','rooms delete Successfully');
+        return redirect()->route('rooms.index')->with('succes','تم الحذف بنجاح');
+
     }
     public function modify($id)
     {

@@ -70,10 +70,10 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="input-field">
-                        <input type="text" placeholder="اسم المستشفى" id="hospital_name" class="form-control" name="hospital_name" autofocus>
+                        <input type="text" placeholder="رمز المستشفى" id="hospital_code" class="form-control" name="hospital_code" autofocus>
                         <i class="uil uil-hospital icon"></i>
-                        @if ($errors->has('hospital_name'))
-                        <span class="text-danger">{{ $errors->first('hospital_name') }}</span>
+                        @if ($errors->has('hospital_code'))
+                        <span class="text-danger">{{ $errors->first('hospital_code') }}</span>
                         @endif
                     </div>
                     <div class="input-field">

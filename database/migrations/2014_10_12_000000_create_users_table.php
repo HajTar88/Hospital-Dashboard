@@ -26,7 +26,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('user_type')->references('types')->on('id')->cascadeOnDelete();
+            // $table->foreign('user_type')->references('types')->on('id')->cascadeOnDelete();
         });
     }
 

@@ -7,8 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Api\ApiResponse;
 use App\Http\Resources\OperationsResource;
 
-
-
 class OperationsController extends Controller
 {
    use ApiResponse;

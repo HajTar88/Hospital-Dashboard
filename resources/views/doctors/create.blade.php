@@ -185,8 +185,8 @@
                 <i class="bi bi-file-earmark-medical"></i>
               <p>
               التقارير
-
              </p>
+             <i class="right fas fa-angle-left"></i>
               </a>
               <ul class="nav nav-treeview">
                 <a href="{{url('doctorsr')}}" class="nav-link">
@@ -224,7 +224,7 @@
             </ul>
 
          <li class="nav-item">
-           <a href="./login.html" class="nav-link ">
+           <a href="{{route('signout')}}" class="nav-link ">
              <i class="bi bi-box-arrow-right"></i>
              <p>
                تسجيـــــل خروج
@@ -278,7 +278,7 @@
                                 <div class="card-body">
                                     <div class="tab-content p-0">
                                         <!-- Morris chart - Sales -->
-                                        <form action="{{route('doctors.store')}}" method="POST">
+                                        <form action="{{route('doctors.store')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
 
                                                     <div class="form-group col-sm-15">
@@ -287,23 +287,32 @@
                                                       name="doctor_name" placeholder="اسم الطبيب ">
                                                       <span class="text-red">    @error('doctor_name')    {{$message}} @enderror </span>
                                           </div>
-                                          <div class="form-group col-sm-15">
-                                            <label for="hospitalName"> الجدول الإسبوعي </label>
-                                            <input type="datetime-local" class="form-control" id="hospitalName"
-                                            name="weekly_schedule" placeholder="الجدول الإسبوعي">
-                                            <span class="text-red">    @error('weekly_schedule')    {{$message}} @enderror </span>
-                                </div>
-                                                    <div class="form-group col-sm-15">
-                                                        <label for="hospitalName">البريد الالكتروني </label>
-                                                        <input type="text" class="form-control" id="hospitalName"
-                                                        name="email" placeholder="example@gmail.com ">
-                                                        <span class="text-red">    @error('email')    {{$message}} @enderror </span>
-                                            </div>
-                                            <div class="form-group col-sm-15">
-                                                <label for="hospitalCode">التخصص</label>
-                                                <input type="text" class="form-control" id="hospitalCode"
-                                                 name="specialization" placeholder="ادخل تخصص الطبيب">
-                                                 <span class="text-red">    @error('specialization')    {{$message}} @enderror </span>
+                                          <div class="row">
+                                            <div class="form-group col">
+                                              <label for="hospitalName"> الجدول الإسبوعي </label>
+                                              <input type="datetime-local" class="form-control" id="hospitalName"
+                                              name="weekly_schedule" placeholder="الجدول الإسبوعي">
+                                              <span class="text-red">    @error('weekly_schedule')    {{$message}} @enderror </span>
+                                              </div>
+                                              <div class="form-group col">
+                                                <label for="hospitalName">بروفايل</label>
+                                                <input type="file" class="form-control" id="hospitalName" name="photo" placeholder="">
+                                                <span class="text-red">    @error('weekly_schedule')    {{$message}} @enderror </span>
+                                                </div>
+                                          </div>
+                                            <div class="row">
+                                              <div class="form-group col">
+                                                <label for="hospitalName">البريد الالكتروني </label>
+                                                <input type="text" class="form-control" id="hospitalName"
+                                                name="email" placeholder="example@gmail.com ">
+                                                <span class="text-red">    @error('email')    {{$message}} @enderror </span>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="hospitalCode">التخصص</label>
+                                        <input type="text" class="form-control" id="hospitalCode"
+                                         name="specialization" placeholder="ادخل تخصص الطبيب">
+                                         <span class="text-red">    @error('specialization')    {{$message}} @enderror </span>
+                                    </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
@@ -316,7 +325,7 @@
                                                     <input type="text" class="form-control" name="phone" placeholder="992602356 249+ ">
                                                     <span class="text-red">    @error('phone')    {{$message}} @enderror </span>
                                                 </div>
-                                            </div>
+                                            </div><br>
                                             <div class="row">
                                               <div class="col">
                                                 <label for="password"> كلمة المرور</label>
@@ -328,7 +337,7 @@
                                             @enderror
                                             </div>
                                             <div class="col">
-                                                <label for="password"> تاكيد كلمة المرور</label>
+                                                <label for="password"> تأكيد كلمة المرور</label>
                                                 <input id="password" type="password" name="password_confirmation" class="form-control  @error('password') is-invalid @enderror " placeholder="تاكيد كلمة المرور" >
                                             </div>
                                             </div>

@@ -9,3 +9,4 @@ class Nurseries extends Model
 {
     protected $fillable = ['nurserie_code','address','beds','hospital_id'];
 }
+?>

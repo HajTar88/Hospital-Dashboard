@@ -87,7 +87,8 @@
                 <h3 class="dropdown-item-title">
                   Nora Silvester
                   <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
+
+</h3>
                 <p class="text-sm">The subject goes here</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
               </div>
@@ -198,8 +199,8 @@
             <i class="bi bi-file-earmark-medical"></i>
           <p>
           تقارير الأطبــــــاء
-
          </p>
+         <i class="right fas fa-angle-left"></i>
           </a>
         </ul>
           <ul class="nav nav-treeview">
@@ -208,7 +209,7 @@
           <p>
           تقارير المرضى
 
-         </p>
+</p>
           </a>
         </ul>
           <ul class="nav nav-treeview">
@@ -289,11 +290,7 @@
                         <thead class="text-center">
                           <tr>
 
-                            <th scope="col">رقم المريض</th>
                             <th scope="col">اسم المريض </th>
-                            <th scope="col"> العنوان</th>
-                            <th scope="col"> الحالة</th>
-                            <th scope="col"> التشخيص</th>
                             <th scope="col"> من</th>
                             <th scope="col"> إلى</th>
 
@@ -308,11 +305,7 @@
                           @foreach ($transfers as $item)
                           <tr>
 
-                            <td>{{$item->patient_code}}</td>
                             <td>{{$item->patient_name}}</td>
-                            <td>{{$item->address}}</td>
-                            <td>{{$item->case}}</td>
-                            <td>{{$item->diagnosis}}</td>
                             <td>{{$item->current_hospital}}</td>
                             <td>{{$item->hospital_referred}}</td>
                             <td>
@@ -335,7 +328,7 @@
             <!-- DIRECT CHAT -->
             <div class="card direct-chat direct-chat-primary">
 
-              <!-- /.card-header -->
+<!-- /.card-header -->
               <div class="card-body">
                 <div class="direct-chat-contacts">
                   <ul class="contacts-list">
@@ -429,7 +422,7 @@
 
             <!-- TO DO List -->
 
-            <!-- /.card -->
+<!-- /.card -->
           </section>
 
         </div>

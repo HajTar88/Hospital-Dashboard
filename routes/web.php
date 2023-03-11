@@ -32,7 +32,7 @@ Route::get('delete/{id}','DoctorController@remove');
 Route::get('modify/{id}','DoctorController@modify');
 Route::put('Update/{id}','DoctorController@update');
 Route::get("doctorsr",  'DoctorController@dr');
-Route::get('/search','DoctorController@search');
+Route::get('/searchd','DoctorController@search');
 
 
 ################### patients ###################
@@ -42,7 +42,7 @@ Route::get('deletep/{id}','PatientsController@remove');
 Route::get('modifyp/{id}','PatientsController@modify');
 Route::put('Update/{id}','PatientsController@update');
 Route::get("patientsr",  'PatientsController@pr');
-//Route::get('/search','PatientsController@search');
+Route::get('/searchp','PatientsController@search');
 
 
 
@@ -103,3 +103,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('postsignup', [UserController::class, 'signupsave'])->name('postsignup');
 Route::get('signout', [UserController::class, 'signOut'])->name('signout');
+?>

@@ -54,7 +54,9 @@ class NurseriesController extends Controller
             'beds' =>$request->beds,
             'hospital_id'=>Auth::id()
         ]);
-        return redirect()->route('nurseries.index')->with('success','nurseries add Successfully');
+        return redirect()->route('nurseries.index')->with('success','تمت الاضافة بنجاح');
+
+
     }
 
     /**
@@ -92,7 +94,8 @@ class NurseriesController extends Controller
     {
         $nurserie = Nurseries::find($id);
         $nurserie->update($request->all());
-        return redirect()->route('nurseries.index')->with('success','nurseries update Successfully');
+        return redirect()->route('nurseries.index')->with('succe','تم التعديل بنجاح');
+
     }
 
     /**
@@ -109,7 +112,8 @@ class NurseriesController extends Controller
     {
         $nurserie = Nurseries::find($id);
         $nurserie->delete();
-        return redirect()->route('nurseries.index')->with('success','nurserie delete Successfully');
+        return redirect()->route('nurseries.index')->with('succes','تم الحذف بنجاح');
+
     }
     public function modify($id)
     {

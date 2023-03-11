@@ -53,7 +53,8 @@ class WardsController extends Controller
             'beds' =>$request->beds,
             'hospital_id'=>Auth::id()
         ]);
-        return redirect()->route('wards.index')->with('success','wards add Successfully');
+        return redirect()->route('wards.index')->with('success','تمت الاضافة بنجاح');
+
     }
 
     /**
@@ -91,7 +92,8 @@ class WardsController extends Controller
     {
         $ward = Wards::find($id);
         $ward->update($request->all());
-        return redirect()->route('wards.index')->with('success','wards update Successfully');
+        return redirect()->route('wards.index')->with('succe','تم التعديل بنجاح');
+
     }
 
     /**
@@ -108,7 +110,8 @@ class WardsController extends Controller
     {
         $ward = Wards::find($id);
         $ward->delete();
-        return redirect()->route('wards.index')->with('success','ward delete Successfully');
+        return redirect()->route('wards.index')->with('succes','تم الحذف بنجاح');
+
     }
     public function modify($id)
     {

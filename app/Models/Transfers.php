@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transfers extends Model
 {
-    protected $fillable = ['patient_code','patient_name','address','diagnosis','case','reason','current_hospital','hospital_referred','hospital_id','status'];
+    protected $fillable = ['patient_name','reason','current_hospital','hospital_referred','hospital_id','status'];
 }
+?>

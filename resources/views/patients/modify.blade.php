@@ -184,8 +184,8 @@
                 <i class="bi bi-file-earmark-medical"></i>
               <p>
               التقارير
-
              </p>
+             <i class="right fas fa-angle-left"></i>
               </a>
               <ul class="nav nav-treeview">
                 <a href="{{url('doctorsr')}}" class="nav-link">
@@ -223,7 +223,7 @@
             </ul>
 
          <li class="nav-item">
-           <a href="./login.html" class="nav-link ">
+           <a href="{{route('signout')}}" class="nav-link ">
              <i class="bi bi-box-arrow-right"></i>
              <p>
                تسجيـــــل خروج
@@ -309,20 +309,7 @@
                                             </div>
 
 
-                                                <div class="col-sm-6"><br>
-                                                    <label for="hospitalCode"> كلمة المرور </label>
-                                                    <input type="text" class="form-control" id="hospitalCode"
-                                                        aria-describedby="emailHelp" name="password" value="{{$patient->password}}" placeholder="ادخل كلمة المرور">
-
-                                                </div>
-                                                <div class="col-sm-6"><br>
-                                                    <label for="hospitalCode"> كلمة المرور </label>
-                                                    <input type="text" class="form-control" id="hospitalCode"
-                                                        aria-describedby="emailHelp" name="confirm_password" value="{{$patient->confirm_password}}" placeholder="ادخل كلمة المرور">
-
-                                                </div>
-
-
+                                            
 
                                             </div>
                                                 <div class="form-check">
@@ -331,7 +318,7 @@
                                               </div><br>
                                               <div class="row">
                                                   <div class="col">
-                                                      <button type="submit" class="btn btn-primary">حفظ <i
+                                                      <button type="submit" class="btn btn-primary">تعديل <i
                                                               class="bi bi-plus-circle"></i></button>
                                                   </div>
                                                   <div class="col">

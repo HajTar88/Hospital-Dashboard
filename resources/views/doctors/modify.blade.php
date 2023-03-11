@@ -186,8 +186,8 @@
                   <i class="bi bi-file-earmark-medical"></i>
                 <p>
                 التقارير
-
                </p>
+               <i class="right fas fa-angle-left"></i>
                 </a>
                 <ul class="nav nav-treeview">
                   <a href="{{url('doctorsr')}}" class="nav-link">
@@ -224,7 +224,7 @@
              </ul>
 
          <li class="nav-item">
-           <a href="./login.html" class="nav-link ">
+           <a href="{{route('signout')}}" class="nav-link ">
              <i class="bi bi-box-arrow-right"></i>
              <p>
                تسجيـــــل خروج
@@ -278,7 +278,7 @@
                                 <div class="card-body">
                                     <div class="tab-content p-0">
                                         <!-- Morris chart - Sales -->
-                                        <form action="{{route('doctors.update', $doctor->id)}}" method="POST">
+                                        <form action="{{route('doctors.update', $doctor->id)}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
 
@@ -288,24 +288,34 @@
                                                       name="doctor_name" value="{{$doctor->doctor_name}}" placeholder="اسم الطبيب ">
                                                       <span class="text-red">    @error('doctor_name')    {{$message}} @enderror </span>
                                           </div>
-                                          <div class="form-group col-sm-15">
+                                          <div class="row">
+                                          <div class="form-group col">
                                             <label for="hospitalName"> الجدول الإسبوعي </label>
                                             <input type="datetime-local" class="form-control" id="hospitalName"
                                             name="weekly_schedule" value="{{$doctor->weekly_schedule}}" placeholder="الجدول الإسبوعي">
                                             <span class="text-red">    @error('weekly_schedule')    {{$message}} @enderror </span>
-                                </div>
-                                                    <div class="form-group col-sm-15">
+                                                    </div>
+                                                    <div class="form-group col">
+                                                      <label for="hospitalName">بروفايل</label>
+                                                      <input type="file" class="form-control" id="hospitalName" name="photo" placeholder=""><br>
+                                                      <img src="{{$doctor->photo}}" alt="" srcset="" width="80">
+                                                      <span class="text-red">    @error('weekly_schedule')    {{$message}} @enderror </span>
+                                                      </div>
+                                                  </div>
+                                                    <div class="row">
+                                                    <div class="form-group col">
                                                         <label for="hospitalName">البريد الالكتروني </label>
                                                         <input type="text" class="form-control" id="hospitalName"
                                                         name="email" value="{{$doctor->email}}" placeholder="example@gmail.com ">
                                                         <span class="text-red">    @error('email')    {{$message}} @enderror </span>
                                             </div>
-                                            <div class="form-group col-sm-15">
+                                            <div class="form-group col">
                                                 <label for="hospitalCode">التخصص</label>
                                                 <input type="text" class="form-control" id="hospitalCode"
                                                  name="specialization" value="{{$doctor->specialization}}" placeholder="ادخل تخصص الطبيب">
                                                  <span class="text-red">    @error('specialization')    {{$message}} @enderror </span>
                                             </div>
+                                          </div>
                                             <div class="row">
                                                 <div class="col">
                                                     <label for="hospitalName">العنوان </label>
@@ -318,6 +328,27 @@
                                                     <span class="text-red">    @error('phone')    {{$message}} @enderror </span>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                            <div class="col-sm-6"><br>
+                                              <label for="hospitalCode"> كلمة المرور </label>
+                                              <input type="text" class="form-control" id="hospitalCode"
+                                                  aria-describedby="emailHelp" name="password"  placeholder=" كلمة المرور">
+                                                  @error('password')
+                                                  <span class="invalid-feedback" role="alert">
+                                                      <strong>{{ $message }}</strong>
+                                                  </span>
+                                              @enderror
+
+                                          </div>
+                                          <div class="col-sm-6"><br>
+                                              <label for="hospitalCode"> تأكيد كلمة المرور </label>
+                                              <input type="text" class="form-control" id="hospitalCode"
+                                                  aria-describedby="emailHelp" name="confirm_password"  placeholder="تأكيد كلمة المرور">
+
+                                          </div>
+                                        </div>
+
+
 
 
                                             <div class="form-check">
@@ -326,7 +357,7 @@
                                             </div><br>
                                             <div class="row">
                                                 <div class="col">
-                                                    <button type="submit" class="btn btn-primary">حفظ <i
+                                                    <button type="submit" class="btn btn-primary">تعديل <i
                                                             class="bi bi-plus-circle"></i></button>
                                                 </div>
                                                 <div class="col">

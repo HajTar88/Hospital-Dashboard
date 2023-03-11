@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('phone');
             $table->integer('hospital_id')->unsigned();
+            $table->string('photo');
             $table->timestamps();
 
             $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
@@ -39,3 +40,4 @@ return new class extends Migration
         Schema::dropIfExists('doctors');
     }
 };
+?>

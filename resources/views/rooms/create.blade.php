@@ -185,8 +185,8 @@
                     <i class="bi bi-file-earmark-medical"></i>
                   <p>
                   التقارير
-
                  </p>
+                 <i class="right fas fa-angle-left"></i>
                   </a>
                   <ul class="nav nav-treeview">
                     <a href="{{url('doctorsr')}}" class="nav-link">
@@ -224,7 +224,7 @@
                 </ul>
 
              <li class="nav-item">
-               <a href="./login.html" class="nav-link ">
+               <a href="{{route('signout')}}" class="nav-link ">
                  <i class="bi bi-box-arrow-right"></i>
                  <p>
                    تسجيـــــل خروج
@@ -292,8 +292,8 @@
                                                     <span class="text-red">    @error('address')    {{$message}} @enderror </span>
                                                 </div>
                                                 <div class="col">
-                                                    <label for="hospitalName">  حجم الغرفة</label>
-                                                    <input type="text" class="form-control" name="room_size" placeholder="حجم الغرفة">
+                                                    <label for="hospitalName">  سعة الغرفة</label>
+                                                    <input type="text" class="form-control" name="room_size" placeholder="سعة الغرفة">
                                                     <span class="text-red">    @error('room_size')    {{$message}} @enderror </span>
                                                 </div>
                                             </div>

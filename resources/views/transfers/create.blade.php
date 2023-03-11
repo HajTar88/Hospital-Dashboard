@@ -87,7 +87,8 @@
                 <h3 class="dropdown-item-title">
                   Nora Silvester
                   <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
+
+</h3>
                 <p class="text-sm">The subject goes here</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
               </div>
@@ -185,8 +186,9 @@
                       <i class="bi bi-file-earmark-medical"></i>
                     <p>
                     التقارير
-
                    </p>
+
+<i class="right fas fa-angle-left"></i>
                     </a>
                     <ul class="nav nav-treeview">
                       <a href="{{url('doctorsr')}}" class="nav-link">
@@ -224,7 +226,7 @@
                  </ul>
 
              <li class="nav-item">
-               <a href="./login.html" class="nav-link ">
+               <a href="{{ route ('signout') }}" class="nav-link ">
                  <i class="bi bi-box-arrow-right"></i>
                  <p>
                    تسجيـــــل خروج
@@ -281,7 +283,7 @@
                                         <form action="{{route('transfers.store')}}" method="POST">
                                             @csrf
 
-                                            </div>
+</div>
                                             {{-- <div class="row">
                                               <div class="col">
                                                 <label for="hospitalName">الرقم التسلسلي </label>
@@ -292,6 +294,7 @@
                                                 <input type="text" class="form-control" id="hospitalName"
                                                    name="patient_name" placeholder="اسم المريض">
                                             </div> --}}
+                                            <div class="row">
                                             <div class="col">
                                               <label for="hospitalName">اسم المريض</label>
                                               <select name="patient_name" class="form-control">
@@ -302,27 +305,11 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="form-group col-sm-6">
-                                                <label for="hospitalName"> العنوان</label>
-                                                <input type="text" class="form-control" id="hospitalName"
-                                                   name="address" placeholder=" العنوان">
-                                            </div>
-                                            <div class="col">
-                                                <label for="hospitalName">الحالة</label>
-                                                <input type="text" class="form-control" name="case" placeholder="الحالة">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-sm-6">
-                                                <label for="hospitalName"> التشخيص</label>
-                                                <input type="text" class="form-control" id="hospitalName"
-                                                  name="diagnosis"  placeholder=" التشخيص">
-                                            </div>
                                             <div class="col">
                                                 <label for="hospitalName">الأسباب </label>
                                                 <input type="text" class="form-control" name="reason" placeholder="الأسباب">
                                             </div>
-                                        </div>
+                                        </div><br>
 
                                             <div class="row">
                                               <div class="col-sm-6">
@@ -343,16 +330,16 @@
                                                 </div>
                                             </div><br>
 
-                                            <div class="form-check">
+<div class="form-check">
                                                 <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
                                             </div>
                                             <div class="row">
-                                                <div class="col">
+                                                <div class="col"><br>
                                                     <button type="submit" class="btn btn-primary">تحويل <i
                                                             class="bi bi-plus-circle"></i></button>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col"><br>
                                                     <a href="{{route('transfers.index')}}" class="btn btn-danger">الغاء <i
                                                             class="bi bi-x-lg"></i></a>
                                                 </div>
@@ -392,7 +379,7 @@
                                                 <a href="#">
                                                     <img class="contacts-list-img" src="dist/img/user7-128x128.jpg">
 
-                                                    <div class="contacts-list-info">
+<div class="contacts-list-info">
                                                         <span class="contacts-list-name">
                                                             Sarah Doe
                                                             <small
@@ -440,7 +427,7 @@
                                                 <a href="#">
                                                     <img class="contacts-list-img" src="dist/img/user6-128x128.jpg">
 
-                                                    <div class="contacts-list-info">
+<div class="contacts-list-info">
                                                         <span class="contacts-list-name">
                                                             John K.
                                                             <small

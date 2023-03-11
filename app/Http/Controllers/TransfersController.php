@@ -82,7 +82,8 @@ class TransfersController extends Controller
         }
     );
 
-        return redirect()->route('transfers.index')->with('success','transfers add Successfully');
+        return redirect()->route('transfers.index')->with('success','تمت الاضافة بنجاح');
+
 
     }
 
@@ -121,7 +122,8 @@ class TransfersController extends Controller
     {
         $transfer = Transfers::find($id);
         $transfer->update($request->all());
-        return redirect()->route('transfers.index')->with('success','transfers update Successfully');
+        return redirect()->route('transfers.index')->with('succe','تم التعديل بنجاح');
+
     }
 
     /**
@@ -138,7 +140,8 @@ class TransfersController extends Controller
     {
         $transfer = Transfers::find($id);
         $transfer->delete();
-        return redirect()->route('transfers.index')->with('success','transfers delete Successfully');
+        return redirect()->route('transfers.index')->with('succes','تم الحذف بنجاح');
+
     }
     public function modify($id)
     {
@@ -160,7 +163,7 @@ class TransfersController extends Controller
     public function search()
     {
       $search_text =$_GET['query'];
-      $transfers = Transfers::where('patient_code','LIKE','%'.$search_text.'%')->get();
+      $transfers = Transfers::where('patient_name','LIKE','%'.$search_text.'%')->get();
       return view('transfers.search',compact('transfers'));
 
     }
@@ -177,7 +180,7 @@ class TransfersController extends Controller
         $transfer->delete();
        }
    );
-       return redirect()->route('transfers.index')->with('success','transfers add Successfully');
+       return redirect()->route('transfers.index')->with('success','تمت الاضافة بنجاح');
     }
     
     public function rej($id)
@@ -185,6 +188,6 @@ class TransfersController extends Controller
         $dd = Transfers::where('status', 'قيد الانتظار')->update(['status'=>'تم رفض الطلب']);
         $transfer = Transfersreq::find($id);
         $transfer->delete();
-        return redirect()->route('transfers.index')->with('success','transfers add Successfully');
+        return redirect()->route('transfers.index')->with('success','تمت الاضافة بنجاح');
     }
 }

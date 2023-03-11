@@ -53,7 +53,8 @@ class CaresController extends Controller
             'beds' =>$request->beds,
             'hospital_id'=>Auth::id()
         ]);
-        return redirect()->route('cares.index')->with('success','cares add Successfully');
+        return redirect()->route('cares.index')->with('success','تمت الاضافة بنجاح');
+
     }
 
     /**
@@ -91,7 +92,8 @@ class CaresController extends Controller
     {
         $care = Cares::find($id);
         $care->update($request->all());
-        return redirect()->route('cares.index')->with('success','cares update Successfully');
+        return redirect()->route('cares.index')->with('succe','تم التعديل بنجاح');
+
     }
 
     /**
@@ -108,7 +110,8 @@ class CaresController extends Controller
     {
         $care = Cares::find($id);
         $care->delete();
-        return redirect()->route('cares.index')->with('success','cares delete Successfully');
+        return redirect()->route('cares.index')->with('succes','تم الحذف بنجاح');
+
     }
     public function modify($id)
     {
@@ -116,3 +119,4 @@ class CaresController extends Controller
         return view('cares.modify' , compact('care'));
     }
 }
+?>

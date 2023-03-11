@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-use App\Models\Patients;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Api\ApiResponse;
@@ -35,15 +35,11 @@ public function show($id)
 public function store(Request $request){
 
    $patient= $request->validate([
-      "patient_name"=>"required",
-      "patient_code"=>"required",
-      "address"=>"required",
-      "case"=>"required",
-      "diagnosis"=>"required",
-      "password"=>"required",
-      
+      "name"=>"required",
+      "password"=>"required",    
+      "email"=>"required",  
    ]);
-   $patient = Patients::create($patient);
+   $patient = User::create($patient);
 
    if($patient){
       return $this->apiResponse($patient, 200 ,'The patient has been saved');
@@ -76,4 +72,4 @@ public function destroy($id){
   
  }
 }
-
+?>

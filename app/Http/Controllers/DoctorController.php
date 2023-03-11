@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Doctors;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
+use Hash;
+
 class DoctorController extends Controller
 {
     /**
@@ -44,7 +46,8 @@ class DoctorController extends Controller
             'email' => 'required',
             'specialization' => 'required',
             'address' => 'required',
-            'phone' => 'required'
+            'phone' => 'required',
+            'photo' =>'required',
         ],
         [
             'doctor_name' => 'اسم الطبيب مطلوب',
@@ -53,9 +56,16 @@ class DoctorController extends Controller
             'email' => 'الايميل مطلوب',
             'specialization' => 'الرجاء ادخال التخصص',
             'address' => 'ادخل العنوان',
-            'phone' => 'الرجاء ادخال رقم الهاتف'
+            'phone' => 'الرجاء ادخال رقم الهاتف',
+            'photo.required'=>'الصورة مطلوبة',
+  
+  
         ]
     );
+   $photo = request('photo')->store('uploads/Doc', 'public');
+    // $config = IdGenerator::generate(['table' => 'doctors', 'field' =>'doctor_name', 'length' => 8, 'prefix' => 'DOC-']);
+        $data = $request->all();
+        $check = $this->create($data);
         $doctor = Doctors::create([
             'doctor_name'=>$request->doctor_name,
             'weekly_schedule'=>$request->weekly_schedule,
@@ -63,10 +73,12 @@ class DoctorController extends Controller
             'specialization'=>$request->specialization,
             'address'=>$request->address,
             'phone'=>$request->phone,
+            'photo' =>$photo,
             'hospital_id'=>Auth::id(),
-            'password'=>$request->password
+            'password' =>Hash::make($data['password'])
         ]);
-        return redirect()->route('doctors.index')->with('success','doctors add Successfully');
+        return redirect()->route('doctors.index')->with('success','تمت الاضافة بنجاح');
+
     }
 
     /**
@@ -108,7 +120,8 @@ class DoctorController extends Controller
             'email' => 'required',
             'specialization' => 'required',
             'address' => 'required',
-            'phone' => 'required'
+            'phone' => 'required',
+            'photo' =>'required',
         ],
         [
             'doctor_name' => 'اسم الطبيب مطلوب',
@@ -117,12 +130,28 @@ class DoctorController extends Controller
             'email' => 'الايميل مطلوب',
             'specialization' => 'الرجاء ادخال التخصص',
             'address' => 'ادخل العنوان',
-            'phone' => 'الرجاء ادخال رقم الهاتف'
+            'phone' => 'الرجاء ادخال رقم الهاتف',
+            'photo.required'=>'الصورة مطلوبة',
+
+            
         ]
     );
+        $photo = request('photo')->store('uploads/Doc', 'public');
         $doctor = Doctors::find($id);
-        $doctor->update($request->all());
-        return redirect()->route('doctors.index')->with('success','doctors update Successfully');
+        $data = $request->all();
+        $check = $this->create($data);
+        $doctor->update([           
+        'doctor_name'=>$request->doctor_name,
+        'weekly_schedule'=>$request->weekly_schedule,
+        'email'=>$request->email,
+        'specialization'=>$request->specialization,
+        'address'=>$request->address,
+        'phone'=>$request->phone,
+        'photo' =>$photo,
+        'hospital_id'=>Auth::id(),
+        'password' =>Hash::make($data['password'])] );
+        return redirect()->route('doctors.index')->with('succe','تم التعديل بنجاح');
+
     }
 
     /**
@@ -140,7 +169,8 @@ class DoctorController extends Controller
     {
         $doctor = Doctors::find($id);
         $doctor->delete();
-        return redirect()->route('doctors.index')->with('success','doctors delete Successfully');
+        return redirect()->route('doctors.index')->with('succes','تم الحذف بنجاح');
+
     }
     public function modify($id)
     {
@@ -161,3 +191,4 @@ class DoctorController extends Controller
 
     }
 }
+?>

@@ -13,3 +13,4 @@ class Operations extends Model
         return $this->belongsTo('App\Hospital', 'hospital_id');
     }
 }
+?>

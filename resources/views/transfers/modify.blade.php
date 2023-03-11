@@ -87,7 +87,8 @@
                 <h3 class="dropdown-item-title">
                   Nora Silvester
                   <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
+
+</h3>
                 <p class="text-sm">The subject goes here</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
               </div>
@@ -185,8 +186,9 @@
                       <i class="bi bi-file-earmark-medical"></i>
                     <p>
                     التقارير
-
                    </p>
+
+<i class="right fas fa-angle-left"></i>
                     </a>
                     <ul class="nav nav-treeview">
                       <a href="{{url('doctorsr')}}" class="nav-link">
@@ -223,7 +225,7 @@
                  </ul>
 
              <li class="nav-item">
-               <a href="./login.html" class="nav-link ">
+               <a href="{{ route ('signout') }}" class="nav-link ">
                  <i class="bi bi-box-arrow-right"></i>
                  <p>
                    تسجيـــــل خروج
@@ -281,7 +283,7 @@
                                             @csrf
                                             @method('PUT')
 
-                                            </div>
+</div>
                                             <div class="row">
                                                 <div class="col">
                                                     <label for="hospitalName">الرقم التسلسلي </label>
@@ -330,7 +332,7 @@
                                                     </select>
                                                 </div>
 
-                                                    <div class="form-group col-sm-6" >
+<div class="form-group col-sm-6" >
                                                         <label for="hospitalName"> المستشفى المحول اليها</label>
                                                         <select id="hospitalName" name="hospital_referred" value="{{$transfer->hospital_referred}}">
                                                           <option
@@ -351,7 +353,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <button type="submit" class="btn btn-primary">حفظ <i
+                                                    <button type="submit" class="btn btn-primary">تعديل <i
                                                             class="bi bi-plus-circle"></i></button>
                                                 </div>
                                                 <div class="col">
@@ -377,7 +379,7 @@
                                                 <a href="#">
                                                     <img class="contacts-list-img" src="dist/img/user1-128x128.jpg">
 
-                                                    <div class="contacts-list-info">
+<div class="contacts-list-info">
                                                         <span class="contacts-list-name">
                                                             Count Dracula
                                                             <small
@@ -426,7 +428,7 @@
                                                 <a href="#">
                                                     <img class="contacts-list-img" src="dist/img/user5-128x128.jpg">
 
-                                                    <div class="contacts-list-info">
+<div class="contacts-list-info">
                                                         <span class="contacts-list-name">
                                                             Nora S. Vans
                                                             <small
@@ -490,7 +492,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <!-- jQuery -->
+<!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="plugins/jquery-ui/jquery-ui.min.js"></script>

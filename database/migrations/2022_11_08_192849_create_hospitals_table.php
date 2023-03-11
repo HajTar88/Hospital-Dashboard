@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('hospital_name');
             $table->string('hospital_address');
             $table->string('phone');
+            $table->string('photo');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -5,7 +5,7 @@ use App\Models\Hospital;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Auth;
 class LoginController extends Controller
 {
     /*
@@ -37,11 +37,16 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    public function hospital_name()
-    {
-        return 'hospital_name';
-    }
-    protected function guard(){
-        return Auth::guard('hospitals');
-    }
+    // public function hospital_name()
+    // {
+    //     return 'hospital_name';
+    // }
+    // public function name()
+    // {
+    //     return 'name';
+    // }
+    // protected function guard(){
+    //     return Auth::guard('hospitals');
+    // }
 }
+?>

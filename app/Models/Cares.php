@@ -9,3 +9,4 @@ class Cares extends Model
 {
     protected $fillable = ['care_code','address','beds','hospital_id'];
 }
+?>

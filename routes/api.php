@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\AuthController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PatientsController;
 use App\Http\Controllers\DoctorsController;
 use App\Http\Controllers\RoomsController;
@@ -11,6 +11,9 @@ use App\Http\Controllers\WardsController;
 use App\Http\Controllers\CaresController;
 use App\Http\Controllers\OperationsController;
 use App\Http\Controllers\TransfersController;
+
+
+
 
 
 
@@ -28,6 +31,14 @@ use App\Http\Controllers\TransfersController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+// Route::controller(AuthController::class)->group(function()
+// {
+//     Route::post('login','login');
+
+// });
+
+// Route::post('login',[UserController::class,'login'])->name('login');
 
 ################### register & login  ###################
 // Route::group(['middleware'=>['auth:sanctum']], function() {
@@ -102,3 +113,17 @@ Route::post('/transfers',[\App\Http\Controllers\Api\TransfersController::class, 
 Route::put('/transfer/{Transfers}',[\App\Http\Controllers\Api\TransfersController::class, 'update']);
 Route::delete('/transfer/{Transfers}',[\App\Http\Controllers\Api\TransfersController::class, 'destroy']);
 
+
+
+// Route::group([
+//     'prefix' => 'auth'
+// ], function ()
+// {
+//     Route::post('login','AuthController@login');
+// }
+// );
+
+Route::post('login','AuthController@login');
+
+
+// Route::get("/hpospital/{id}/doctors", [\App\Http\Controllers\DoctorsController::class, "getDoctorsByHospital"]);

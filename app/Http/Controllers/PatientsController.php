@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use App\Models\Patients;
 use Illuminate\Http\Request;
+use Hash;
 use Auth;
 class PatientsController extends Controller
 {
@@ -37,7 +38,6 @@ class PatientsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'password' => 'required|confirmed|min:6',
             'patient_name' =>'required|max:255',
             'address' =>'required',
             'case' =>'required',
@@ -48,21 +48,22 @@ class PatientsController extends Controller
           'address.required'=>'العنوان مطلوب',
           'phone.required'=>'رقم الهاتف مطلوب',
           'password.required'=>'الرجاء ادخال كلمة السر',
-          'password.min'=>' كلمة السر قصيرة جدا',
-          'password.confirmed'=>' كلمة السر غير متطابقة',
         ]
     );
-        $id = IdGenerator::generate(['table' => 'patients', 'field' =>'patient_code', 'length' => 8, 'prefix' => 'PAT-']);
+        // $id = IdGenerator::generate(['table' => 'patients', 'field' =>'patient_code', 'length' => 8, 'prefix' => 'PAT-']);
+        $config = IdGenerator::generate(['table' => 'patients', 'field' =>'patient_code', 'length' => 8, 'prefix' => 'PAT-']);
+        $data = $request->all();
+        $check = $this->create($data);
         $patient = Patients::create([
-            'patient_code' => $id,
+            'patient_code' => $config,
             'patient_name' => $request-> patient_name,
             'address' =>$request->address,
             'case' =>$request->case,
             'diagnosis' =>$request->diagnosis,
             'hospital_id'=>Auth::id(),
-            'password' => bcrypt('password')   
         ]);
-        return redirect()->route('patients.index')->with('success','patients add Successfully');
+        return redirect()->route('patients.index')->with('success','تمت الاضافة بنجاح');
+
     }
 
     /**
@@ -100,7 +101,8 @@ class PatientsController extends Controller
     {
         $patient = Patients::find($id);
         $patient->update($request->all());
-        return redirect()->route('patients.index')->with('success','patients update Successfully');
+        return redirect()->route('patients.index')->with('succe','تم التعديل بنجاح');
+
     }
 
     /**
@@ -118,7 +120,8 @@ class PatientsController extends Controller
     {
         $patient = Patients::find($id);
         $patient->delete();
-        return redirect()->route('patients.index')->with('success','patients delete Successfully');
+        return redirect()->route('patients.index')->with('succes','تم الحذف بنجاح');
+
     }
     public function modify($id)
     {
@@ -135,9 +138,10 @@ class PatientsController extends Controller
     public function search()
     {
       $search_text =$_GET['query'];
-      $patients = Patients::where('patient_code','LIKE','%'.$search_text.'%')->get();
-      return view('patients.search',compact('patient'));
+      $patients = Patients::where('patient_name','LIKE','%'.$search_text.'%')->get();
+      return view('patients.search',compact('patients'));
 
     }
     
 }
+?>

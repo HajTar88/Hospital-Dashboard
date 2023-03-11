@@ -189,7 +189,7 @@
              <i class="right fas fa-angle-left"></i>
               </a>
               <ul class="nav nav-treeview">
-                <a href="" class="nav-link">
+                <a href="{{url('doctorsr')}}" class="nav-link">
                 <i class="bi bi-file-earmark-medical"></i>
               <p>
               تقارير الأطبــــــاء
@@ -198,7 +198,7 @@
               </a>
             </ul>
               <ul class="nav nav-treeview">
-                <a href="" class="nav-link">
+                <a href="{{url('patientsr')}}" class="nav-link">
                 <i class="bi bi-file-earmark-medical"></i>
               <p>
               تقارير المرضى
@@ -207,7 +207,7 @@
               </a>
             </ul>
               <ul class="nav nav-treeview">
-                <a href="" class="nav-link">
+                <a href="{{url('transfersr')}}" class="nav-link">
                 <i class="bi bi-file-earmark-medical"></i>
               <p>
               تقارير التحاويل

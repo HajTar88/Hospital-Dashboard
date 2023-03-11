@@ -186,8 +186,8 @@
             <i class="bi bi-file-earmark-medical"></i>
           <p>
           التقارير
-
          </p>
+         <i class="right fas fa-angle-left"></i>
           </a>
           <ul class="nav nav-treeview">
             <a href="{{url('doctorsr')}}" class="nav-link">
@@ -225,7 +225,7 @@
        </ul>
 
    <li class="nav-item">
-     <a href="./login.html" class="nav-link ">
+     <a href="{{route('signout')}}" class="nav-link ">
        <i class="bi bi-box-arrow-right"></i>
        <p>
          تسجيـــــل خروج
@@ -296,11 +296,7 @@
                         <thead class="text-center">
                           <tr>
 
-                            <th scope="col">رقم المريض</th>
                             <th scope="col">اسم المريض </th>
-                            <th scope="col"> العنوان</th>
-                            <th scope="col"> الحالة</th>
-                            <th scope="col"> التشخيص</th>
                             <th scope="col"> من</th>
                             <th scope="col"> إلى</th>
 
@@ -315,11 +311,7 @@
                           @foreach ($transfers as $item)
                           <tr>
 
-                            <td>{{$item->patient_code}}</td>
                             <td>{{$item->patient_name}}</td>
-                            <td>{{$item->address}}</td>
-                            <td>{{$item->case}}</td>
-                            <td>{{$item->diagnosis}}</td>
                             <td>{{$item->current_hospital}}</td>
                             <td>{{$item->hospital_referred}}</td>
                             <td>

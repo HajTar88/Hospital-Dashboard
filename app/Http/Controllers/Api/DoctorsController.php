@@ -13,10 +13,13 @@ class DoctorsController extends Controller
 {
    use ApiResponse;
    
-   public function index()
+   public function index(Request $request)
 {
- 
+   // $doctor= $request->validate([
+   //    "id"=>"required",
+   // ]);
    $doctors = \App\Models\Doctors::all();
+   //  $doctors = \App\Models\Doctors::where('hospital_id', $doctor)->get();
    return $this->apiResponse($doctors, 200 ,'ok');
 }
    
@@ -41,7 +44,9 @@ public function store(Request $request){
       "specialization"=>"required",
       "address"=>"required",
       "phone"=>"required",
-      
+      "password"=>"required",
+      "hospital_id"=>"required",
+
    ]);
    $doctor = Doctors::create($doctor);
 
@@ -75,5 +80,7 @@ public function destroy($id){
 
   
  }
+//  public function getDoctorsByHospital($id){}
 }
 
+?>

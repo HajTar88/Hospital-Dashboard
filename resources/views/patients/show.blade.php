@@ -184,8 +184,8 @@
                 <i class="bi bi-file-earmark-medical"></i>
               <p>
               التقارير
-
              </p>
+             <i class="right fas fa-angle-left"></i>
               </a>
               <ul class="nav nav-treeview">
                 <a href="{{url('doctorsr')}}" class="nav-link">
@@ -223,7 +223,7 @@
             </ul>
 
          <li class="nav-item">
-           <a href="./login.html" class="nav-link ">
+           <a href="{{route('signout')}}" class="nav-link ">
              <i class="bi bi-box-arrow-right"></i>
              <p>
                تسجيـــــل خروج
@@ -282,43 +282,48 @@
                                             <div class="row">
                                             <div class="form-group col-sm-6">
                                                 <label for="hospitalName">اسم المريض</label>
-                                                <input type="text" class="form-control" id="hospitalName"
-                                                   name="patient_name" value="{{$patient->patient_name}}" placeholder="اسم المريض">
+                                                {{-- <input type="text" class="form-control" id="hospitalName"
+                                                   name="patient_name" value="{{$patient->patient_name}}" placeholder="اسم المريض"> --}}
+                                                   <p>{{$patient->patient_name}}</p>
                                             </div>
                                             <div class="col-sm-6">
                                                 <label for="hospitalName">الرقم التسلسلي </label>
-                                                <input type="text" class="form-control" name="patient_code" value="{{$patient->patient_code}}" placeholder="الرقم التسلسي ">
+                                                {{-- <input type="text" class="form-control" name="patient_code" value="{{$patient->patient_code}}" placeholder="الرقم التسلسي "> --}}
+                                                <p>{{$patient->patient_code}}</p>
                                             </div>
 
                                             <div class="col-sm-6" ><br>
                                                 <label for="hospitalName"> العنوان</label>
-                                                <input type="text" class="form-control" id="hospitalName"
-                                                  name="address" value="{{$patient->address}}" placeholder="العنوان ">
+                                                {{-- <input type="text" class="form-control" id="hospitalName"
+                                                  name="address" value="{{$patient->address}}" placeholder="العنوان "> --}}
+                                                  <p>{{$patient->address}}</p>
                                             </div>
                                             <div class="col-sm-6" ><br>
                                                 <label for="hospitalName"> الحالة</label>
-                                                <input type="text" class="form-control" id="hospitalName"
-                                               name="case" value="{{$patient->case}}" placeholder="الحالة ">
+                                                {{-- <input type="text" class="form-control" id="hospitalName"
+                                               name="case" value="{{$patient->case}}" placeholder="الحالة "> --}}
+                                               <p>{{$patient->case}}</p>
                                             </div>
                                             <div class="col-sm-12" ><br>
                                                 <label for="hospitalName"> التشخيص</label>
-                                                <input type="text" class="form-control" id="hospitalName"
-                                                  name="diagnosis" value="{{$patient->diagnosis}}"  placeholder="التشخيص ">
+                                                {{-- <input type="text" class="form-control" id="hospitalName"
+                                                  name="diagnosis" value="{{$patient->diagnosis}}"  placeholder="التشخيص "> --}}
+                                                  <p>{{$patient->diagnosis}}</p>
                                             </div>
 
 
-                                                <div class="col-sm-6"><br>
+                                                {{-- <div class="col-sm-6"><br>
                                                     <label for="hospitalCode"> كلمة المرور </label>
                                                     <input type="text" class="form-control" id="hospitalCode"
                                                         aria-describedby="emailHelp" name="password" value="{{$patient->password}}" placeholder="ادخل كلمة المرور">
+                                                        <p>{{$patient->password}}</p>
 
-                                                </div>
-                                                <div class="col-sm-6"><br>
-                                                    <label for="hospitalCode"> كلمة المرور </label>
-                                                    <input type="text" class="form-control" id="hospitalCode"
-                                                        aria-describedby="emailHelp" name="confirm_password" value="{{$patient->confirm_password}}" placeholder="ادخل كلمة المرور">
+                                                </div> --}}
+                                                {{-- <div class="col-sm-6"><br>
+                                                    <label for="hospitalCode"> تأكيد كلمة المرور </label>
+                                                        <p>{{$patient->confirm_password}}</p>
 
-                                                </div>
+                                                </div> --}}
 
 
 
@@ -330,7 +335,7 @@
 
                                                   <div class="col">
                                                     <a href="{{route('patients.index')}}" class="btn btn-danger">رجوع <i
-                                                      class="bi bi-x-lg"></i></a>
+                                                      class=""></i></a>
                                                   </div>
                                                   {{--<div class="col">
                                                       <button type="submit" class="btn btn-danger">الغاء <i

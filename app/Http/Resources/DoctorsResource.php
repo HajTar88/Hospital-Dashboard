@@ -22,7 +22,7 @@ class DoctorsResource extends JsonResource
             'address' =>$this->address,
             'phone' =>$this->phone,
 
-
         ];
     }
 }
+?>

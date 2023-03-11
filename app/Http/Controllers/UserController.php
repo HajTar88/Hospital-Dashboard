@@ -23,11 +23,11 @@ class UserController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'hospital_name' => 'required',
+            'hospital_code' => 'required',
             'password' => 'required',
         ]);
     
-        $credentials = $request->only('hospital_name', 'password');
+        $credentials = $request->only('hospital_code', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('db')
                         ->with('message', 'Signed in!');
@@ -45,7 +45,7 @@ class UserController extends Controller
     {  
         $request->validate([
             'name' => 'required',
-            'hospital_name' => 'required|unique:users',
+            'hospital_code' => 'required|unique:users',
             'password' => 'required|min:6',
         ]);
             
@@ -59,7 +59,7 @@ class UserController extends Controller
     {
       return Hospital::create([
         'name' => $data['name'],
-        'hospital_name' => $data['hospital_name'],
+        'hospital_name' => $data['hospital_code'],
         'password' => Hash::make($data['password'])
       ]);
     }    
@@ -79,3 +79,4 @@ class UserController extends Controller
         return redirect('login');
     }
 }
+?>

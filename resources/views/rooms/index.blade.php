@@ -214,8 +214,8 @@
                   <i class="bi bi-file-earmark-medical"></i>
                 <p>
                 التقارير
-
                </p>
+               <i class="right fas fa-angle-left"></i>
                 </a>
                 <ul class="nav nav-treeview">
                   <a href="{{url('doctorsr')}}" class="nav-link">
@@ -252,7 +252,7 @@
              </ul>
 
          <li class="nav-item">
-           <a href="./login.html" class="nav-link ">
+           <a href="{{route('signout')}}" class="nav-link ">
              <i class="bi bi-box-arrow-right"></i>
              <p>
                تسجيـــــل خروج
@@ -304,7 +304,17 @@
               </div><!-- /.card-header -->
               <div class="container">
                 @if ($message = Session::get('success'))
-                <div class="alert alert-primary" role="alert">
+                <div id="alert" class="alert alert-primary">
+                {{$message}}
+              </div>
+                @endif
+                @if ($message = Session::get('succe'))
+                <div id="alert" class="alert alert-success" >
+                {{$message}}
+              </div>
+                @endif
+                @if ($message = Session::get('succes'))
+                <div id="alert" class="alert alert-danger" >
                 {{$message}}
               </div>
                 @endif
@@ -321,7 +331,7 @@
 
                             <th scope="col">رقم الغرفة</th>
                             <th scope="col">العنوان </th>
-                            <th scope="col">حجم الغرفة</th>
+                            <th scope="col">سعة الغرفة</th>
 
                             <th scope="col">العمليـــــات</th>
                           </tr>
@@ -339,7 +349,7 @@
                             <td>
                               <button type="button" class="btn btn-light"><a href="{{ route('rooms.show', $item->id)}}" ><i class="bi bi-eye-fill"></i></a> </button>
                               <button type="button" class="btn btn-light"> <a href="{{url('modifyr/'.$item->id)}}" ><i class="far fa-edit text-success" ></i></a></button>
-                              <button type="button" class="btn btn-light"> <a href="{{url('deleter/'.$item->id)}}"><i class="fa fa-trash text-danger"></i></a>  </button>
+                              <button type="button" class="btn btn-light"> <a href="{{url('deleter/'.$item->id)}}" class="delete-confirm"><i class="fa fa-trash text-danger"></i></a>  </button>
                             </td>
                           </tr>
                           @endforeach
@@ -506,5 +516,36 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script type="text/javascript">
+  setTimeout(function () {
+
+      // Closing the alert
+      $('#alert').alert('close');
+  }, 200);
+</script>
+    <!-- Including jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
+    </script>
+
+    <!-- Including Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $('.delete-confirm').on('click', function (e) {
+          e.preventDefault();
+          const url = $(this).attr('href');
+          swal({
+              title: 'تاكيد الحذف',
+              text: 'سيتم حذف هذا العنصر بشكل تام',
+              icon: 'warning',
+              buttons: ["الغاء", "تاكيد"],
+          }).then(function(value) {
+              if (value) {
+                  window.location.href = url;
+              }
+          });
+      });
+    </script>
 </body>
 </html>

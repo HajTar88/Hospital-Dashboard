@@ -12,7 +12,6 @@ trait ApiResponse{
             'cont'=>$cont,
             'ststus'=>$status,
             'message'=>$message,
-            
 
         ];
         return response($data, $status);
@@ -20,3 +19,4 @@ trait ApiResponse{
 
 
 }
+?>

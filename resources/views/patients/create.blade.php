@@ -184,8 +184,8 @@
                 <i class="bi bi-file-earmark-medical"></i>
               <p>
               التقارير
-
              </p>
+             <i class="right fas fa-angle-left"></i>
               </a>
               <ul class="nav nav-treeview">
                 <a href="{{url('doctorsr')}}" class="nav-link">
@@ -223,7 +223,7 @@
             </ul>
 
          <li class="nav-item">
-           <a href="./login.html" class="nav-link ">
+           <a href="{{route('signout')}}" class="nav-link ">
              <i class="bi bi-box-arrow-right"></i>
              <p>
                تسجيـــــل خروج
@@ -309,21 +309,9 @@
                                                   name="diagnosis"  placeholder="التشخيص ">
                                                   <span class="text-red">    @error('diagnosis')    {{$message}} @enderror </span>
                                             </div>
-
-                                              <div class="col">
-                                                  <label for="password"> كلمة المرور</label>
-                                                  <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="كلمة المرور"  >
-                                                  @error('password')
-                                                  <span class="invalid-feedback" role="alert">
-                                                      <strong>{{ $message }}</strong>
-                                                  </span>
-                                              @enderror
-                                              </div>
-                                              <div class="col">
-                                                  <label for="password"> تاكيد كلمة المرور</label>
-                                                  <input id="password" type="password" name="password_confirmation" class="form-control  @error('password') is-invalid @enderror " placeholder="تاكيد كلمة المرور" >
-                                              </div>
-                                              </div>
+                                            
+                                              
+              
 
 
 
@@ -339,7 +327,7 @@
                                                   </div>
                                                   <div class="col">
                                                     <a href="{{route('patients.index')}}" class="btn btn-danger">الغاء <i
-                                                      class="bi bi-x-lg"></i></a>
+                                                      class=""></i></a>
                                                   </div>
                                                   {{--<div class="col">
                                                       <button type="submit" class="btn btn-danger">الغاء <i

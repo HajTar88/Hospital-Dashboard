@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'hospitals',
+        'passwords' => 'users',
     ],
 
     /*
@@ -37,6 +37,10 @@ return [
 
     'guards' => [
         'web' => [
+            'driver' => 'session',
+            'provider' => 'hospitals',
+        ],
+        'hospitals' => [
             'driver' => 'session',
             'provider' => 'hospitals',
         ],
@@ -64,6 +68,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Hospital::class,
         ],
+        'users' =>[
+            'driver' => 'eloquent',
+            'model' => App\Models\Users::class, 
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
@@ -88,7 +96,7 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'hospitals',
+            'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
@@ -109,3 +117,4 @@ return [
     'password_timeout' => 10800,
 
 ];
+?>

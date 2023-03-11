@@ -53,7 +53,8 @@ class OperationsController extends Controller
             'hospital_id'=>Auth::id()
 
         ]);
-        return redirect()->route('operations.index')->with('success','operations add Successfully');
+        return redirect()->route('operations.index')->with('success','تمت الاضافة بنجاح');
+
     }
 
     /**
@@ -91,7 +92,8 @@ class OperationsController extends Controller
     {
         $operation = Operations::find($id);
         $operation->update($request->all());
-        return redirect()->route('operations.index')->with('success','operations update Successfully');
+        return redirect()->route('operations.index')->with('succe','تم التعديل بنجاح');
+
     }
 
     /**
@@ -108,7 +110,9 @@ class OperationsController extends Controller
     {
         $operation = Operations::find($id);
         $operation->delete();
-        return redirect()->route('operations.index')->with('success','operations delete Successfully');
+        return redirect()->route('operations.index')->with('succes','تم الحذف بنجاح');
+
+        
     }
     public function modify($id)
     {

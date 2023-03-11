@@ -185,8 +185,8 @@
                     <i class="bi bi-file-earmark-medical"></i>
                   <p>
                   التقارير
-
                  </p>
+                 <i class="right fas fa-angle-left"></i>
                   </a>
                   <ul class="nav nav-treeview">
                     <a href="{{url('doctorsr')}}" class="nav-link">
@@ -223,7 +223,7 @@
                   </a>
                 </ul>
              <li class="nav-item">
-               <a href="./login.html" class="nav-link ">
+               <a href="{{route('signout')}}" class="nav-link ">
                  <i class="bi bi-box-arrow-right"></i>
                  <p>
                    تسجيـــــل خروج

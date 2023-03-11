@@ -35,11 +35,7 @@ public function show($id)
 public function store(Request $request){
 
    $transfer= $request->validate([
-      "patient_code"=>"required",
       "patient_name"=>"required",
-      "address"=>"required",
-      "diagnosis"=>"required",
-      "case"=>"required",
       "reason"=>"required",
       "current_hospital"=>"required",
       "hospital_referred"=>"required",
@@ -78,3 +74,4 @@ public function destroy($id){
  }
 }
 
+?>

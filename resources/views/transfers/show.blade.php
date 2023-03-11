@@ -87,7 +87,8 @@
                 <h3 class="dropdown-item-title">
                   Nora Silvester
                   <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
+
+</h3>
                 <p class="text-sm">The subject goes here</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
               </div>
@@ -185,8 +186,9 @@
                       <i class="bi bi-file-earmark-medical"></i>
                     <p>
                     التقارير
-
                    </p>
+
+<i class="right fas fa-angle-left"></i>
                     </a>
                     <ul class="nav nav-treeview">
                       <a href="{{url('doctorsr')}}" class="nav-link">
@@ -224,7 +226,7 @@
                  </ul>
 
              <li class="nav-item">
-               <a href="./login.html" class="nav-link ">
+               <a href="{{ route ('signout') }}" class="nav-link ">
                  <i class="bi bi-box-arrow-right"></i>
                  <p>
                    تسجيـــــل خروج
@@ -282,37 +284,16 @@
 
                                             </div>
                                             <div class="row">
-                                                <div class="col">
-                                                    <label for="hospitalName">الرقم التسلسلي </label>
-                                                    <input type="text" class="form-control" name="patient_code" value="{{$transfer->patient_code}}" placeholder="الرقم التسلسي ">
-                                                </div>
-                                            <div class="form-group col-sm-6">
+                                            <div class="form-group col">
                                                 <label for="hospitalName">اسم المريض</label>
-                                                <input type="text" class="form-control" id="hospitalName"
-                                                   name="patient_name" value="{{$transfer->patient_name}}" placeholder="اسم المريض">
+                                                <p>{{$transfer->patient_name}} </p>
                                             </div>
 
-                                        </div>
+</div>
                                         <div class="row">
-                                            <div class="form-group col-sm-6">
-                                                <label for="hospitalName"> العنوان</label>
-                                                <input type="text" class="form-control" id="hospitalName"
-                                                   name="address" value="{{$transfer->address}}" placeholder=" العنوان">
-                                            </div>
-                                            <div class="col">
-                                                <label for="hospitalName">الحالة</label>
-                                                <input type="text" class="form-control" name="case" value="{{$transfer->case}}" placeholder="الحالة">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-sm-6">
-                                                <label for="hospitalName"> التشخيص</label>
-                                                <input type="text" class="form-control" id="hospitalName"
-                                                  name="diagnosis" value="{{$transfer->diagnosis}}" placeholder=" التشخيص">
-                                            </div>
                                             <div class="col">
                                                 <label for="hospitalName">الأسباب </label>
-                                                <input type="text" class="form-control" name="reason" value="{{$transfer->reason}}" placeholder="الأسباب">
+                                                <p>{{$transfer->reason}} </p>
                                             </div>
                                         </div><br>
 
@@ -320,12 +301,12 @@
 
                                               <div class="col">
                                                 <label for="hospitalName">المستشفى الحالية </label>
-                                                <input type="text" class="form-control" name="current_hospital" value="{{$transfer->current_hospital}}" >
+                                                <p>{{$transfer->current_hospital}}</p>
                                             </div>
 
                                             <div class="col">
                                               <label for="hospitalName">المستشفى المحول اليها </label>
-                                              <input type="text" class="form-control" name="hospital_referred" value="{{$transfer->hospital_referred}}" >
+                                              <p>{{$transfer->hospital_referred}}</p>
                                           </div>
 
 
@@ -338,8 +319,8 @@
                                             <div class="row">
 
                                                 <div class="col">
-                                                    <a href="{{route('transfers.index')}}" class="btn btn-danger">الغاء <i
-                                                            class="bi bi-x-lg"></i></a>
+                                                    <a href="{{route('transfers.index')}}" class="btn btn-danger">رجوع <i
+                                                            class=""></i></a>
                                                 </div>
                                             </div>
                                         </form>
@@ -377,7 +358,7 @@
                                                 <a href="#">
                                                     <img class="contacts-list-img" src="dist/img/user7-128x128.jpg">
 
-                                                    <div class="contacts-list-info">
+<div class="contacts-list-info">
                                                         <span class="contacts-list-name">
                                                             Sarah Doe
                                                             <small
@@ -425,7 +406,7 @@
                                                 <a href="#">
                                                     <img class="contacts-list-img" src="dist/img/user6-128x128.jpg">
 
-                                                    <div class="contacts-list-info">
+<div class="contacts-list-info">
                                                         <span class="contacts-list-name">
                                                             John K.
                                                             <small

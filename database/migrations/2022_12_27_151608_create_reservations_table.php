@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
-            $table->string('family_name');
             $table->string('address');
             $table->string('phone');
+            $table->string('chdoctor');
+            $table->string('chdates');
             $table->timestamps();
         });
     }

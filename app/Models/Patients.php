@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patients extends Model
 {
-    protected $fillable = ['patient_name','patient_code','address','case','diagnosis','password','hospital_id'];
+    protected $fillable = ['patient_name','patient_code','address','case','diagnosis','hospital_id'];
     public function Hospita()
     {
         return $this->belongsTo('App\Hospital', 'hospital_id');
     }
 }
+?>

@@ -87,7 +87,8 @@
                 <h3 class="dropdown-item-title">
                   Nora Silvester
                   <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
+
+</h3>
                 <p class="text-sm">The subject goes here</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
               </div>
@@ -186,8 +187,8 @@
             <i class="bi bi-file-earmark-medical"></i>
           <p>
           التقارير
-
          </p>
+         <i class="right fas fa-angle-left"></i>
           </a>
           <ul class="nav nav-treeview">
             <a href="{{url('doctorsr')}}" class="nav-link">
@@ -213,7 +214,7 @@
           <p>
           تقارير التحاويل
 
-         </p>
+</p>
           </a>
         </ul>
 
@@ -277,7 +278,17 @@
               </div><!-- /.card-header -->
               <div class="container">
                 @if ($message = Session::get('success'))
-                <div class="alert alert-primary" role="alert">
+                <div id="alert" class="alert alert-primary">
+                {{$message}}
+              </div>
+                @endif
+                @if ($message = Session::get('succe'))
+                <div id="alert" class="alert alert-success" >
+                {{$message}}
+              </div>
+                @endif
+                @if ($message = Session::get('succes'))
+                <div id="alert" class="alert alert-danger" >
                 {{$message}}
               </div>
                 @endif
@@ -292,14 +303,9 @@
                         <thead class="text-center">
                           <tr>
 
-                            <th scope="col">رقم المريض</th>
-                            <th scope="col">اسم المريض </th>
-                            <th scope="col"> العنوان</th>
-                            <th scope="col"> الحالة</th>
-                            <th scope="col"> التشخيص</th>
+                            <th scope="col">اسم المريض</th>
                             <th scope="col"> من</th>
                             <th scope="col"> إلى</th>
-                            <th scope="col"> الحالة</th>
 
 
                             <th scope="col">العمليـــــات</th>
@@ -312,18 +318,13 @@
                           @foreach ($transfers as $item)
                           <tr>
 
-                            <td>{{$item->patient_code}}</td>
-                            <td>{{$item->patient_name}}</td>
-                            <td>{{$item->address}}</td>
-                            <td>{{$item->case}}</td>
-                            <td>{{$item->diagnosis}}</td>
+<td>{{$item->patient_name}}</td>
                             <td>{{$item->current_hospital}}</td>
                             <td>{{$item->hospital_referred}}</td>
-                            <td>{{$item->status}}</td>
                             <td>
                               <button type="button" class="btn btn-light"><a href="{{ route('transfers.show', $item->id)}}" ><i class="bi bi-eye-fill"></i></a> </button>
-                              <button type="button" class="btn btn-light"> <a href="{{url('modifyt/'.$item->id)}}" ><i class="far fa-edit text-success" ></i></a></button>
-                              <button type="button" class="btn btn-light"> <a href="{{url('deletet/'.$item->id)}}"><i class="fa fa-trash text-danger"></i></a>  </button>
+                              {{-- <button type="button" class="btn btn-light"> <a href="{{url('modifyt/'.$item->id)}}" ><i class="far fa-edit text-success" ></i></a></button>
+                              <button type="button" class="btn btn-light"> <a href="{{url('deletet/'.$item->id)}}" class="delete-confirm"><i class="fa fa-trash text-danger"></i></a>  </button> --}}
                             </td>
                           </tr>
                           @endforeach
@@ -393,7 +394,7 @@
                       <a href="#">
                         <img class="contacts-list-img" src="dist/img/user5-128x128.jpg">
 
-                        <div class="contacts-list-info">
+<div class="contacts-list-info">
                           <span class="contacts-list-name">
                             Nora S. Vans
                             <small class="contacts-list-date float-right">2/10/2015</small>
@@ -490,5 +491,36 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script type="text/javascript">
+  setTimeout(function () {
+
+      // Closing the alert
+      $('#alert').alert('close');
+  }, 200);
+</script>
+    <!-- Including jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
+    </script>
+
+<!-- Including Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $('.delete-confirm').on('click', function (e) {
+          e.preventDefault();
+          const url = $(this).attr('href');
+          swal({
+              title: 'تاكيد الحذف',
+              text: 'سيتم حذف هذا العنصر بشكل تام',
+              icon: 'warning',
+              buttons: ["الغاء", "تاكيد"],
+          }).then(function(value) {
+              if (value) {
+                  window.location.href = url;
+              }
+          });
+      });
+    </script>
 </body>
 </html>

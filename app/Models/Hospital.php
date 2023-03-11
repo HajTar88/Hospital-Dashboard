@@ -11,10 +11,10 @@ class Hospital extends Authenticatable
 {
 use Notifiable;
 use HasFactory;
-// protected $table = 'hospitals';
+protected $table = 'hospitals';
 protected $primaryKey = 'id';
 protected $guard = "hospitals";
-protected $table = 'hospitals';
+// protected $table = 'hospitals';
 protected $fillable = ['hospital_code','hospital_name','hospital_address','phone','password'];
 
 protected $hidden = [ 'password', 'remember_token',];
@@ -44,3 +44,4 @@ public function getAuthPassword()
 //     protected $fillable = ['hospital_name', 'password'];
 // }
 }
+?>
