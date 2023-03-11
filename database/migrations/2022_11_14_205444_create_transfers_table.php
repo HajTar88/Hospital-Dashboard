@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('reason');
             $table->string('current_hospital');
             $table->string('hospital_referred');
-            $table->integer('hospital_id')->unsigned();
+            $table->bigInteger('hospital_id')->unsigned();
             $table->timestamps();
             $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
         });

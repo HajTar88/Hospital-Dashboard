@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('types',  function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-        });
+        // Schema::create('types',  function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('name');
+        // });
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
